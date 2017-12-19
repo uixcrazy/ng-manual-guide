@@ -1,0 +1,15 @@
+<div class="app-content">
+  <div class="sidenav">
+    <a *ngFor="let nav of navigation"
+      [ngClass]="nav.value == selected.value ? 'active': ''"
+      (click)="onChangeContent(nav)">{{ nav.title }}</a>
+  </div>
+  <div class="main-content">
+    <div class="mc-header">
+      <h2 class="mc-title">MANUAL GUIDE</h2>
+    </div>
+    <div class="mc-body">
+      <div [innerHTML]="content" class="mc-content"></div>
+    </div>
+  </div>
+</div>

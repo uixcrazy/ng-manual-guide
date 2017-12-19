@@ -1,0 +1,29 @@
+
+// :host {
+//    /deep/  {
+//   }
+// }
+.app-content {
+  display: flex;
+  flex-wrap: nowrap;
+  border: 2px solid #ccc;
+  margin: 1rem;
+  padding: 1rem;
+  .sidenav {
+    flex: 1 0 20rem;
+    a {
+      display: block;
+      padding: .25rem;
+    }
+  }
+  .main-content {
+    flex: 1 0 auto;
+    .mc-content {
+      img {
+        text-align: center;
+        max-width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+}

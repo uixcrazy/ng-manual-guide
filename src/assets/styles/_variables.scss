@@ -1,0 +1,135 @@
+// =======================================================================
+// 1. Settings
+// get color: http://demo.geekslabs.com/materialize-v1.0/css-color.html
+// =======================================================================
+
+
+//
+// Color system
+//
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+) !default;
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$theme-colors: (
+  primary: #0275d8,
+  secondary: $gray-600,
+  success: #5cb85c,
+  info: #5bc0de,
+  warning: #f0ad4e,
+  danger: #d9534f,
+  light: $gray-100,
+  dark: $gray-800
+) !default;
+// map-get($theme-colors, info);
+
+$colors: (
+  primary: (
+      base: #3984dc,
+      light: #027dd4, // not update
+      dark: #0052a8
+    ),
+
+  secondary: (
+    base: #c1403d, // temp
+    light: #f97168, // temp
+    dark: #8a0016, // temp
+  )
+); // How to use --- color: map-get(map-get($colors, primary), base);
+
+$color-brand: (
+  facebook: #3b5998,
+  twitter: #1da1f2,
+  googleplus: #dd4b39,
+  linkedin: #0077b5,
+  youtube: #cd201f,
+  instagram: #405de6,
+  yahoo: #410093,
+  github: #333,
+  git: #f54d27
+);
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval: 8% !default;
+
+//
+// COMMON: common padding and border radius sizes and more.
+//
+$line-height-lg: 1.5 !default;
+$line-height-sm: 1.5 !default;
+$border-width: 1px !default;
+$border-radius: .25rem !default;
+$border-radius-lg: .3rem !default;
+$border-radius-sm: .2rem !default;
+$component-active-color: $white !default;
+$component-active-bg: theme-color("primary") !default;
+$caret-width: .3em !default;
+$transition-base: all .2s ease-in-out !default;
+$transition-fade: opacity .15s linear !default;
+$transition-collapse: height .35s ease !default;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+//
+// Fonts
+//
+$font-suffix-sans-serif: Arial, Helvetica, sans-serif;
+// $font-primary: "Roboto", $font-suffix-sans-serif;
+$font-family-base: "Roboto", $font-suffix-sans-serif !default;
+$font-family-secondary: "Roboto Condensed", $font-suffix-sans-serif !default;
+$font-family-monospace: "Courier New", Courier, monospace; // "Lucida Console", Monaco, monospace
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: 1.25rem !default;
+$font-size-sm: .875rem !default;
+$font-weight-base: normal;
+$line-height-base: 1.5 !default;
+
+//
+// Options: quickly modify global styling by enabling or disabling optional features.
+//
+$enable-rounded: true !default;
+$enable-transitions: true !default;
+
+//
+// Links
+//
+$link-color: map-get($theme-colors, "primary") !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// letter-spacing: 16 * 0.0625 = 1px
+$ls1: .0625em;
