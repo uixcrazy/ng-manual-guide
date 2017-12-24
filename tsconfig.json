@@ -12,6 +12,9 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+      "@ng-bootstrap/ng-bootstrap": ["../src/app/shared/libs/index"]
+    },
     "lib": [
       "es2017",
       "dom"

@@ -1,0 +1,30 @@
+<div class="content">
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <div class="feedback-error form-group" *ngIf="apiError" [innerHTML]="apiError"></div>
+    <div class="feedback-error form-group" *ngIf="otherError" [innerHTML]="otherError"></div>
+    <div class="form-group" [class.has-error]="formErrors.newPass">
+      <div class="md-form">
+        <input class="form-control" type="password" formControlName="newPass" placeholder="New Password" required autofocus/>
+        <label>New Password</label>
+      </div>
+    </div>
+    <div class="form-group" [class.has-error]="formErrors.newPassConfirm">
+      <div class="md-form">
+        <input class="form-control" type="password" formControlName="newPassConfirm" placeholder="Confirm Password" required autofocus/>
+        <label>Confirm Password</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn-login" [disabled]="!authForm.valid || loading || otherError !== null">
+        <span *ngIf="loading" class="loading">
+          <i class="icon-smx-spinner spinner"></i>
+          <span class="txt">Authenticating</span>
+        </span>
+        <span *ngIf="!loading">Change Password</span>
+      </button>
+    </div>
+    <div class="form-group">
+      <p [class.has-error]="formErrors.newPass || formErrors.newPassConfirm" class="notice">{{validationMessages.pattern}}</p>
+    </div>
+  </form>
+</div>

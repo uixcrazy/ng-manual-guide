@@ -5,7 +5,7 @@
   "description": "Example project from an angular.io guide.",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --environment=local --base-href / --port 4300",
+    "start": "ng serve --environment=local --base-href / --port 4300 --aot",
     "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e"
@@ -26,6 +26,7 @@
     "@angular/platform-server": "~5.0.0",
     "@angular/router": "~5.0.0",
     "@angular/upgrade": "~5.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.8",
     "angular-in-memory-web-api": "~0.5.0",
     "core-js": "^2.4.1",
     "crypto-js": "^3.1.9-1",

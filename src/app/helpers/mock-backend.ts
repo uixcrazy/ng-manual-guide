@@ -10,7 +10,7 @@ export function mockBackendFactory(backend: MockBackend, options: BaseRequestOpt
     console.log(backend.connections);
     setTimeout(() => {
       // login
-      if (connection.request.url.endsWith(ENDPOINTS.login) && connection.request.method === RequestMethod.Post) {
+      if (connection.request.url.endsWith(ENDPOINTS.signin) && connection.request.method === RequestMethod.Post) {
         const params = JSON.parse(connection.request.getBody());
         const _requestKey = Object.keys(LOGIN).filter(key =>
           (JSON.stringify(LOGIN[key]['request']) === JSON.stringify(params))

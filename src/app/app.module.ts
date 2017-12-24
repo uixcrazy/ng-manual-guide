@@ -22,10 +22,10 @@ import { BaseRequestOptions } from '@angular/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ManualGuideModule,
     // Feature
     AuthModule,
     BaseModule,
+    ManualGuideModule,
   ],
   providers: [
     AuthGuard,

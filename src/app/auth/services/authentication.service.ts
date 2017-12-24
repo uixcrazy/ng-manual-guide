@@ -19,7 +19,7 @@ export class AuthenticationService {
 
   constructor(private http: Http) { }
 
-  login(username: string, password: string) {
+  signin(username: string, password: string) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
@@ -53,7 +53,7 @@ export class AuthenticationService {
     //   } catch (err){}
     // })
 
-    return this.http.post(ENDPOINTS.login, {
+    return this.http.post(ENDPOINTS.signin, {
       username: secureUsercreds.username,
       password: secureUsercreds.password
     }, { headers: headers })
@@ -66,6 +66,28 @@ export class AuthenticationService {
       }
       return user;
     });
+  }
+
+  changepass(username: string, oldPassword: string, newPassword: string) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    const key = CryptoJS.enc.Base64.parse(this.key);
+    const iv  = CryptoJS.enc.Base64.parse(this.iv);
+    const encryptedOldPassword = CryptoJS.AES.encrypt(oldPassword, key, {iv: iv});
+    const encryptedNewPassword = CryptoJS.AES.encrypt(newPassword, key, {iv: iv});
+
+    const _oldPassword = encryptedOldPassword.toString();
+    const _newPassword = encryptedNewPassword.toString();
+    return this.http.post(ENDPOINTS.changepass, {
+      username,
+      oldPassword: _oldPassword,
+      newPassword: _newPassword
+    })
+    .map((response: Response) => response.json());
+  }
+
+  signup(username: string, password: string) {
+    return;
   }
 
   refreshToken() {
@@ -114,7 +136,7 @@ export class AuthenticationService {
 
     const _oldPassword = encryptedOldPassword.toString();
     const _newPassword = encryptedNewPassword.toString();
-    return this.http.post(ENDPOINTS.login, {
+    return this.http.post(ENDPOINTS.signin, {
       username,
       oldPassword: _oldPassword,
       newPassword: _newPassword

@@ -1,0 +1,31 @@
+<div class="content">
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <div class="feedback-error form-group" *ngIf="apiError" [innerHTML]="apiError"></div>
+    <div class="form-group" [class.has-error]="formErrors.username">
+      <div class="md-form">
+        <label>Username</label>
+        <input class="form-control" type="text" name="username" formControlName="username" required placeholder="Username" autofocus/>
+      </div>
+    </div>
+    <div class="form-group" [class.has-error]="formErrors.password">
+      <div class="md-form">
+        <label>Password</label>
+        <input class="form-control" type="password" name="password" formControlName="password" required placeholder="Password" />
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn-primary" [disabled]="!authForm.valid || loading">
+        <span *ngIf="loading; else signinBtn" [class.loading]="loading">
+          <span class="txt">Authenticating</span>
+        </span>
+        <ng-template #signinBtn>Sign In</ng-template>
+      </button>
+    </div>
+    <div class="form-group">
+      <a routerLink="/signup">Create New Account</a>
+    </div>
+    <div class="form-group">
+      <a routerLink="changepass">Change Password</a>
+    </div>
+  </form>
+</div>

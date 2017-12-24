@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthComponent } from './auth.component';
 import {
-  LoginComponent,
+  SigninComponent,
+  SignupComponent,
+  ChangepassComponent
  } from './components';
 
 const routes: Routes = [
@@ -11,8 +13,10 @@ const routes: Routes = [
     path: '',
     component: AuthComponent,
     children: [
-      { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
-      { path: 'auth/login', component: LoginComponent },
+      { path: '', redirectTo: '/auth/signin', pathMatch: 'full' },
+      { path: 'auth/signin', component: SigninComponent },
+      { path: 'auth/signup', component: SignupComponent },
+      { path: 'auth/changepass', component: ChangepassComponent },
     ]
   },
 ];

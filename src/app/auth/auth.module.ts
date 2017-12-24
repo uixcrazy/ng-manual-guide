@@ -5,7 +5,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 import {
-  LoginComponent,
+  SigninComponent,
+  SignupComponent,
+  ForgotpassComponent,
+  ChangepassComponent
  } from './components/index';
  import { AuthComponent } from './auth.component';
  import { AuthRoutingModule } from './auth-routing.module';
@@ -21,7 +24,10 @@ import {
   ],
   declarations: [
     AuthComponent,
-    LoginComponent,
+    SigninComponent,
+    SignupComponent,
+    ForgotpassComponent,
+    ChangepassComponent,
   ],
   providers: [
     AuthenticationService,

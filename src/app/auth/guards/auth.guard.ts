@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
       state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const currUser = JSON.parse(localStorage.getItem(LOCALSTORAGE.crUser));
     if (!currUser || !currUser.access_token) {
-      this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url } });
+      this.router.navigate(['/auth/signin'], { queryParams: { returnUrl: state.url } });
       return false;
     }
 
@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
       const expires = currentUserStorage.expires_in * 1000; // milliseconds
       const timeCountDown = expires - (Date.now() - currentUserStorage.startTime);
       if (timeCountDown <= 0 ) {
-        this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url } });
+        this.router.navigate(['/auth/signin'], { queryParams: { returnUrl: state.url } });
         return false;
       }
       return true;
